@@ -25,6 +25,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
+                                <th>Marca do Carro</th>
                             </tr>
                         </thead>
 
@@ -33,6 +34,7 @@
                             <tr>
                                 <td>{{ carro.id }}</td>
                                 <td>{{ carro.nome }}</td>
+                                <td>{{ carro.marca?.nome }}</td>
 
                                 <td class="direita">
                                     <button type="button" class="btn btn-primary btn-rounded" mdbRipple

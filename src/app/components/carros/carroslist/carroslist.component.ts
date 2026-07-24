@@ -1,5 +1,6 @@
 import { Component, inject, TemplateRef, ViewChild } from '@angular/core';
 import { Carro } from '../../../models/carro';
+import { Marca } from '../../../models/marca';
 import { RouterLink } from "@angular/router";
 import { MdbModalModule, MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import Swal from 'sweetalert2'
@@ -15,7 +16,7 @@ import { CarroService } from 'app/services/carro.service';
 })
 export class CarroslistComponent {
   lista: Carro[] = [];
-  carroEdit: Carro = new Carro(0, "");
+  carroEdit: Carro = new Carro(0, "", null);
 
   //ELEMENTOS DA MODAL
   modalService = inject(MdbModalService); // para conseguir abrir a modal
@@ -92,7 +93,7 @@ export class CarroslistComponent {
   }
 
   new() {
-    this.carroEdit = new Carro(0, "");
+    this.carroEdit = new Carro(0, "", null);
     this.modalRef = this.modalService.open(this.modalCarroDetalhe);
   }
 
